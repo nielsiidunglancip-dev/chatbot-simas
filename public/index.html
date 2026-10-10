@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InsureMind AI - Sinar Mas Sales Coach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <i data-lucide="shield-check" class="brand-icon"></i>
+        <h1>InsureMind AI</h1>
+      </div>
+      <div class="sidebar-info">
+        <p class="subtitle">Asuransi Sinar Mas Coach</p>
+        <div class="status-badge">
+          <span class="dot"></span>
+          <span>RAG System Active</span>
+        </div>
+      </div>
+      <div class="sidebar-menu">
+        <button class="menu-btn active" id="newChatBtn">
+          <i data-lucide="message-square-plus"></i>
+          <span>Chat Baru</span>
+        </button>
+      </div>
+
+      <!-- Mode Selection -->
+      <div class="sidebar-section">
+        <p class="section-title">Pilih Mode Chat</p>
+        <div class="mode-cards">
+          <div class="mode-card active" id="modeJualanCard" data-mode="jualan">
+            <div class="mode-header">
+              <i data-lucide="briefcase" class="mode-icon"></i>
+              <span class="mode-title">Asisten Jualan</span>
+            </div>
+            <p class="mode-desc">Proaktif, profiling prospek, & rekomendasi cross-selling.</p>
+          </div>
+          <div class="mode-card" id="modeBelajarCard" data-mode="belajar">
+            <div class="mode-header">
+              <i data-lucide="graduation-cap" class="mode-icon"></i>
+              <span class="mode-title">Belajar & Ujian</span>
+            </div>
+            <p class="mode-desc">Pasif-edukatif, latihan kuis, materi ujian, PAYDI & SKKNI.</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Chat Area -->
+    <main class="chat-main">
+      <header class="chat-header">
+        <h2><i data-lucide="briefcase"></i> Sales Coach Assistant</h2>
+        <p>Siap membantu Anda closing lebih cepat!</p>
+      </header>
+
+      <div class="chat-box" id="chatBox">
+        <!-- Welcome Message -->
+        <div class="message bot-message">
+          <div class="avatar bot-avatar">
+            <i data-lucide="bot"></i>
+          </div>
+          <div class="message-content">
+            <p>Halo Rekan Agen! Saya InsureMind AI, Sales Coach Anda untuk Asuransi Sinar Mas. Ada prospek nasabah yang ingin kita bahas hari ini, atau butuh bantuan tentang detail produk?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input-container">
+        <form id="chatForm" class="chat-form">
+          <textarea id="userInput" placeholder="Tanyakan seputar produk, strategi closing, atau bedah prospek..." rows="1" autofocus></textarea>
+          <button type="button" id="micBtn" class="mic-btn" title="Rekam Suara (Voice to Text)">
+            <i data-lucide="mic"></i>
+          </button>
+          <button type="submit" id="sendBtn" class="send-btn" disabled>
+            <i data-lucide="send"></i>
+          </button>
+        </form>
+        <p class="disclaimer">AI dapat melakukan kesalahan. Jangan ragu untuk memverifikasi dokumen resmi perusahaan.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal Koreksi Admin -->
+  <div id="modalKoreksi" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h3>Koreksi Mandiri Admin</h3>
+      <p class="modal-subtitle">Tambahkan instruksi tambahan atau koreksi perilaku AI langsung di bawah ini:</p>
+      <textarea id="catatanKoreksi" placeholder="Contoh: Jangan pernah melakukan proaktif jualan saat agen bertanya tentang kuis Level 3..."></textarea>
+      <div class="modal-actions">
+        <button type="button" id="batalKoreksiBtn" class="btn-secondary">Batal</button>
+        <button type="button" id="simpanKoreksiBtn" class="btn-primary">Simpan Aturan</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# Environment variables (API Keys & Secrets)
+.env
+.env.local
+
+# Cache & temporary files
+embeddings_cache.json
+*.log
